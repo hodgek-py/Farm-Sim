@@ -8,21 +8,20 @@ class Farm_Sim:
         self.counter = counter
 
     def simulation(self):
+        sim = Sim_Var(2,1,50,2)
+        print(sim.spread)
         while self.time > self.counter:
             print(self.counter)
             self.counter += 1
 
 class Sim_Var:
-    def __init__(self,amount,crop,ratio,rain,size,fertilizer):
-        self.amount = amount
+    def __init__(self,crop,rain,size,fertilizer,ratio = (1/3)):
         self.crop = crop
         self.rain = rain
         self.size = size
         self.fertilizer = fertilizer
         self.ratio = ratio
-
-    def dispersion(self):
-        pass
+        self.spread = self.ratio * self.size
 
     def rain_day(self):
         pass
